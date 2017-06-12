@@ -12,3 +12,10 @@
   float: left;
 }
 
+#nav-bar .header {
+  margin-left: 10px;
+  line-height: 2.5em;
+  font-size: 2em;
+  font-weight: lighter;
+  float: left;
+}
