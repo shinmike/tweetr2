@@ -5,5 +5,10 @@
   font-family: 'Roboto Condensed', sans-serif;
   padding-left: 2em;
   padding-right: 2em;
- };
+}
+
+#nav-bar .logo {
+  width: 80px; 
+  float: left;
+}
 
