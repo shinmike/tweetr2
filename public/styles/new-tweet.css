@@ -1,6 +1,6 @@
 main {
   border: 2em;
-  padding-top: 35px;
+  padding-top: 70px;
   padding-bottom: 140px;
 }
 
@@ -17,6 +17,8 @@ textarea {
   float: right;
   font-style: italic;
   padding-right: 5px;
+  font-size: .9em;
+  margin-top: 7px;
 }
 
 .new-tweet {
