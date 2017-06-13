@@ -1,8 +1,8 @@
 $(document).ready(function(){
-  console.log("document ready!");
   $('.new-tweet textarea').on('input', function(){
-    console.log($(this).val().length);
+    const charLimit = 140;
+    const charLength = $(this).val().length;
+    const charRemaining = charLength - charLimit;
+    console.log(charRemaining);
   });
 });
-
-console.log("composer-char-counter added!");
