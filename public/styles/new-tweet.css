@@ -1,0 +1,27 @@
+main {
+  border: 2em;
+  padding-top: 35px;
+  padding-bottom: 140px;
+}
+
+h2 {
+  border-bottom: 2px solid #244751;;
+}
+
+textarea {
+  width: 100%;
+  padding: 4px;
+}
+
+.counter {
+  float: right;
+  font-style: italic;
+  padding-right: 5px;
+}
+
+.new-tweet {
+  background: rgba(170, 170, 170, 0.29);
+  padding: 20px;
+  border: 1px #aaa solid;
+  border-radius: 5px;
+}
