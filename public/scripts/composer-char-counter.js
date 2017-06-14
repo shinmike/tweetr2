@@ -1,9 +1,10 @@
-$(document).ready(function(){
+$(function(){
+
   $('.new-tweet textarea').on('input', function(){
-    const charLimit = 140;
-    const charLength = $(this).val().length;
-    const charRemaining = charLimit - charLength;
-    const $counter = $(this).parent().children('.counter');
+    var charLimit = 140;
+    var charLength = $(this).val().length;
+    var charRemaining = charLimit - charLength;
+    var $counter = $(this).parent().children('.counter');
     $counter.text(charRemaining);
     if (charRemaining < 0){
       $counter.addClass('overLimit');
@@ -11,4 +12,5 @@ $(document).ready(function(){
       $counter.removeClass('overLimit');
     }
   });
+
 });
