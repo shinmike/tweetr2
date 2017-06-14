@@ -4,10 +4,6 @@ main {
   padding-bottom: 140px;
 }
 
-h2 {
-  border-bottom: 2px solid #244751;;
-}
-
 textarea {
   width: 100%;
   padding: 4px;
@@ -30,5 +26,9 @@ textarea {
   padding: 20px;
   border: 1px #aaa solid;
   border-radius: 5px;
+}
+
+.new-tweet h2 {
+    border-bottom: 2px solid #244751;;
 }
 
