@@ -5,15 +5,25 @@
 
 .tweet {
   background: white;
+  opacity: 0.8;
+  transition: 1s all ease-in-out;
   border: 1px #aaa solid;
   border-radius: 10px;
   margin-top: 20px;
   margin-bottom: 20px;
 }
 
+.tweet:hover {
+  opacity: 1;
+  transition: 1s all ease-in-out;
+}
+
+.tweet:hover .icons {
+  display: block;
+}
+
 .tweet header{
   background: rgba(170, 170, 170, 0.29);
-  opacity: 0.8;
   border-bottom: 1px rgba(170, 170, 170, 0.29) solid;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
@@ -53,4 +63,15 @@
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   font-size: .8em;
+}
+
+.tweet footer .icons {
+  float: right;
+  padding: 15px 10px;
+  display: none;
+}
+
+.tweet i {
+  margin-left: 3px;
+  color: #2ecc71;
 }
