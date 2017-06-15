@@ -1,7 +1,7 @@
 main {
   border: 2em;
   padding-top: 70px;
-  padding-bottom: 140px;
+  padding-bottom: 20px;
   margin-top: 35px;
 }
 
@@ -27,6 +27,7 @@ textarea {
   padding: 20px;
   border: 1px #aaa solid;
   border-radius: 10px;
+  box-shadow: 2px 2px 2px grey;
 }
 
 .new-tweet h2 {
