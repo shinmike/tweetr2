@@ -8,8 +8,8 @@ $(function(){
   $('#textTweet').focus();
 
 // ----------------------------------------------------- Form submission using Jquery
-  $('#createTweet').on('submit', function(event){
-    event.preventDefault();
+  $('#createTweet').on('submit', function(e){
+    e.preventDefault();
     var tweetLength = $('#textTweet').val().length;
 
 // ----------------------------------------------------- Validation 1
@@ -28,9 +28,9 @@ $(function(){
       url: "/tweets",
       data: $(this).serialize()
     }).done(function(){
-      console.log('AJAX POST request successful!!!');
       $('#textTweet').val('');
       loadTweets();
+      $('.counter').text('140');
     })
 
   });
@@ -75,7 +75,6 @@ $(function(){
       method: "GET",
       url: "/tweets",
     }).done(function(data){
-      console.log('AJAX GET request successful!!!');
       renderTweets(data);
     })
   } 
