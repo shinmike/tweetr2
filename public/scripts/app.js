@@ -1,18 +1,23 @@
+// ----------------------------------------------------- Function for error message
 function showError(message){
   alert(message);
 };
 
 $(function(){
 
-  $('#createTweet').on('submit', function(event) {
+  $('#textTweet').focus();
+
+// ----------------------------------------------------- Form submission using Jquery
+  $('#createTweet').on('submit', function(event){
     event.preventDefault();
     var tweetLength = $('#textTweet').val().length;
 
+// ----------------------------------------------------- Validation 1
     if (tweetLength === 0) {
       showError("You didn't tweet anything :(");
       return;
     }; 
-
+// ----------------------------------------------------- Validation 2
     if (tweetLength > 140){
       showError("You exceeded 140 characters :(");
       return;
@@ -24,11 +29,13 @@ $(function(){
       data: $(this).serialize()
     }).done(function(){
       console.log('AJAX POST request successful!!!');
+      $('#textTweet').val('');
       loadTweets();
     })
+
   });
 
-  function createTweetElement(tweetObject) {
+  function createTweetElement(tweetObject){
     var $article = $('<article class="tweet">');
     var $header = $('<header>');
     var $avatar = $('<img class="avatar" src=' + tweetObject.user.avatars.small + '>' );
@@ -55,7 +62,7 @@ $(function(){
     return $article;
   }
 
-  function renderTweets(arrayTweetObject) {
+  function renderTweets(arrayTweetObject){
     $('#all-tweets').empty();
     for (var key in arrayTweetObject) {
       var article = createTweetElement(arrayTweetObject[key]);
@@ -63,15 +70,14 @@ $(function(){
     }
   }
 
-  function loadTweets() {
+  function loadTweets(){
     $.ajax({
       method: "GET",
       url: "/tweets",
-      data: $(this).serialize()
     }).done(function(data){
       console.log('AJAX GET request successful!!!');
       renderTweets(data);
     })
-  }
+  } 
 
 });
