@@ -5,6 +5,11 @@
   font-family: 'Roboto Condensed', sans-serif;
   padding-left: 2em;
   padding-right: 2em;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
 }
 
 #nav-bar .logo {
