@@ -20,12 +20,14 @@ $(function(){
     var $iFlag = $('<i class="fa fa-flag">');
     var $iRetweet = $('<i class="fa fa-retweet">');
     var $iHeart = $('<i class="fa fa-heart">');
+    // var $test = $('<a class="like-Unlike" href="">Like</a>');
+
     var $pTimestamp = $('<p class="timestamp">' + moment(tweetObject.created_at).fromNow() + '</p>');
 
     $header.append($avatar).append($h2).append($h1);
     
     $divTweetContent.append($p);
-    $divIcons.append($iFlag).append($iRetweet).append($iHeart);
+    $divIcons.append($iFlag).append($iRetweet).append($iHeart)//.append($test);
     
     $footer.append($divIcons).append($pTimestamp);
 
@@ -47,6 +49,22 @@ $(function(){
       url: "/tweets"
     }).done(function(data){
       renderTweets(data);
+      
+      $(".fa.fa-heart").click(function(){
+        $(this)
+          .toggleClass("fa-heart-o fa-heart");
+      });
+      
+      // $(".like-Unlike").click(function() {
+      //   if ($(this).html() == "Like") {
+      //     $(this).html('Unlike');
+      //   }
+      //   else {
+      //     $(this).html('Like');
+      //   }
+      //   return false;
+      // });
+      
     });
   }
 
