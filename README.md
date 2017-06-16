@@ -13,9 +13,11 @@ This repository is the starter code for the project: Students will fork and clon
 
 ## Final Product
 
-!["Screenshot of landing page"](https://github.com/shinmike/tiny-app2-1/blob/master/docs/landing-page.png)
-!["Screenshot of landing page menu"](https://github.com/shinmike/tiny-app2-1/blob/master/docs/landing-page-menu.png)
-!["Screenshot of registration page"](https://github.com/shinmike/tiny-app2-1/blob/master/docs/register-page.png)
+!["Screenshot of home page"](https://github.com/shinmike/tweetr2/blob/master/docs/home.png)
+!["Screenshot of compose box and button"](https://github.com/shinmike/tweetr2/blob/master/docs/home-compose.png)
+!["Screenshot of compose box hidden"](https://github.com/shinmike/tweetr2/blob/master/docs/home-compose-hide.png)
+!["Screenshot of adding new tweet"](https://github.com/shinmike/tweetr2/blob/master/docs/home-add-tweet.png)
+!["Screenshot of added new tweet"](https://github.com/shinmike/tweetr2/blob/master/docs/home-added-tweet.png)
 
 ## Dependencies
 
