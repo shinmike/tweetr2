@@ -5,8 +5,8 @@
 
 .tweet {
   background: white;
-  opacity: 0.8;
-  transition: 1s all ease-in-out;
+  opacity: 0.6;
+  transition: .25s all ease-in-out;
   border: 1px #aaa solid;
   border-radius: 10px;
   margin-top: 20px;
@@ -15,7 +15,6 @@
 
 .tweet:hover {
   opacity: 1;
-  transition: 1s all ease-in-out;
 }
 
 .tweet:hover .icons {

@@ -1,39 +1,11 @@
 // ----------------------------------------------------- Function for error message
 function showError(message){
   alert(message);
-};
+}
 
 $(function(){
 
   $('#textTweet').focus();
-
-// ----------------------------------------------------- Form submission using Jquery
-  $('#createTweet').on('submit', function(e){
-    e.preventDefault();
-    var tweetLength = $('#textTweet').val().length;
-
-// ----------------------------------------------------- Validation 1
-    if (tweetLength === 0) {
-      showError("You didn't tweet anything :(");
-      return;
-    }; 
-// ----------------------------------------------------- Validation 2
-    if (tweetLength > 140){
-      showError("You exceeded 140 characters :(");
-      return;
-    };
-
-    $.ajax({
-      method: "POST",
-      url: "/tweets",
-      data: $(this).serialize()
-    }).done(function(){
-      $('#textTweet').val('');
-      loadTweets();
-      $('.counter').text('140');
-    })
-
-  });
 
   function createTweetElement(tweetObject){
     var $article = $('<article class="tweet">');
@@ -53,7 +25,7 @@ $(function(){
     $header.append($avatar).append($h2).append($h1);
     
     $divTweetContent.append($p);
-    $divIcons.append($iFlag).append($iRetweet).append($iHeart)
+    $divIcons.append($iFlag).append($iRetweet).append($iHeart);
     
     $footer.append($divIcons).append($pTimestamp);
 
@@ -63,20 +35,52 @@ $(function(){
   }
 
   function renderTweets(arrayTweetObject){
-    $('#all-tweets').empty();
-    for (var key in arrayTweetObject) {
-      var article = createTweetElement(arrayTweetObject[key]);
-      $('#all-tweets').prepend(article);
-    }
+    var $allTweets = $('#all-tweets').empty();
+    arrayTweetObject.forEach(function(article){
+      $allTweets.prepend(createTweetElement(article));
+    });
+    // for (var key in arrayTweetObject) {
+    //   var article = createTweetElement(arrayTweetObject[key]);
+    //   $('#all-tweets').prepend(article);
+    // }
   }
 
   function loadTweets(){
     $.ajax({
       method: "GET",
-      url: "/tweets",
+      url: "/tweets"
     }).done(function(data){
       renderTweets(data);
-    })
-  } 
+    });
+  }
+  // ----------------------------------------------------- Form submission using Jquery
+  $('#createTweet').on('submit', function(e){
+    e.preventDefault();
+    var tweetLength = $('#textTweet').val().length;
 
+// ----------------------------------------------------- Validation 1
+    if (tweetLength === 0) {
+      showError("You didn't tweet anything :(");
+      return;
+    }
+// ----------------------------------------------------- Validation 2
+    if (tweetLength > 140){
+      showError("You exceeded 140 characters :(");
+      return;
+    }
+
+    $.ajax({
+      method: "POST",
+      url: "/tweets",
+      data: $(this).serialize()
+    }).done(function(){
+      $('#textTweet').val('');
+      loadTweets();
+      $('.counter').text('140');
+    });
+
+  });
+
+
+  loadTweets();
 });

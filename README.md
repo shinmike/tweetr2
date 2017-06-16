@@ -11,6 +11,12 @@ This repository is the starter code for the project: Students will fork and clon
 3. Start the web server using the `npm run local` command. The app will be served at <http://localhost:8080/>.
 4. Go to <http://localhost:8080/> in your browser.
 
+## Final Product
+
+!["Screenshot of landing page"](https://github.com/shinmike/tiny-app2-1/blob/master/docs/landing-page.png)
+!["Screenshot of landing page menu"](https://github.com/shinmike/tiny-app2-1/blob/master/docs/landing-page-menu.png)
+!["Screenshot of registration page"](https://github.com/shinmike/tiny-app2-1/blob/master/docs/register-page.png)
+
 ## Dependencies
 
 - Express
