@@ -39,10 +39,6 @@ $(function(){
     arrayTweetObject.forEach(function(article){
       $allTweets.prepend(createTweetElement(article));
     });
-    // for (var key in arrayTweetObject) {
-    //   var article = createTweetElement(arrayTweetObject[key]);
-    //   $('#all-tweets').prepend(article);
-    // }
   }
 
   function loadTweets(){
@@ -53,7 +49,8 @@ $(function(){
       renderTweets(data);
     });
   }
-  // ----------------------------------------------------- Form submission using Jquery
+
+// ----------------------------------------------------- Form submission using Jquery
   $('#createTweet').on('submit', function(e){
     e.preventDefault();
     var tweetLength = $('#textTweet').val().length;
@@ -80,7 +77,6 @@ $(function(){
     });
 
   });
-
 
   loadTweets();
 });

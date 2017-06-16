@@ -14,6 +14,7 @@ app.use(express.static("public"));
 const MONGODB_URI = "mongodb://localhost:27017/tweeter";
 
 MongoClient.connect(MONGODB_URI, (err, db) => {
+
   console.log('Connected to MongoDB!');
 
   const DataHelpers = require("./lib/data-helpers.js")(db);
@@ -24,4 +25,5 @@ MongoClient.connect(MONGODB_URI, (err, db) => {
   app.listen(PORT, () => {
     console.log("Example app listening on port " + PORT);
   });
+  
 });
