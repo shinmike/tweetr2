@@ -29,6 +29,7 @@ module.exports = function(DataHelpers) {
       content: {
         text: req.body.text
       },
+      liked: false, // Like or Unlike feature
       created_at: Date.now()
     };
 
@@ -40,6 +41,21 @@ module.exports = function(DataHelpers) {
       }
     });
   });
+
+
+
+  tweetsRoutes.post("/:id/like", function (req, res) {
+    const tweetID = req.params.id;
+    DataHelpers.updateLike(tweetID, (err) => {
+      if (err) {
+        res.status(500).json({ error: err.message });
+      } else {
+        res.status(204).send();
+      }
+    });
+  });
+
+
 
   return tweetsRoutes;
 

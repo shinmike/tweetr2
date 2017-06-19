@@ -73,8 +73,5 @@
 .tweet i {
   margin-left: 3px;
   color: #2ecc71;
-}
-
-.tweet i .fa-fa-heart-unlike {
-  color:black;
+  cursor: pointer;
 }
